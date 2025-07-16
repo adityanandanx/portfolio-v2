@@ -10,19 +10,16 @@ const HeroSection = (props: Props) => {
   return (
     <SectionContainer>
       <div className="min-h-screen flex flex-col justify-center">
-        <div className="flex flex-col items-start gap-4 max-w-4xl">
+        <div className="flex flex-col items-start gap-4 max-w-2xl">
           <div className="text-2xl font-mono">Hi, my name is</div>
           <h1 className="text-6xl font-bold">Aditya Nandan.</h1>
           <h2 className="text-6xl font-thin">
             I build <Stuff />
           </h2>
           <p className="opacity-50">
-            I’m a pre-final year CSE student and passionate builder who loves
-            turning complex ideas into simple, user-friendly products. From
-            winning hackathons to shipping real-world projects, I thrive in
-            fast-paced, collaborative environments. I’m now looking for a
-            software engineering internship where I can help create impactful
-            products with a driven team.
+            I build practical, user-friendly applications with modern
+            technologies. As a pre-final year Computer Science student, I
+            transform complex challenges into functional and polished software.
           </p>
           <Button variant={"outline"} size={"lg"}>
             Let&lsquo;s Go <ArrowDown />
