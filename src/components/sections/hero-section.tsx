@@ -1,6 +1,8 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "../ui/button";
 import SectionContainer from "./section-container";
+import ReactCurvedText from "react-curved-text";
+import Stuff from "../specific/stuff";
 
 type Props = {};
 
@@ -12,10 +14,7 @@ const HeroSection = (props: Props) => {
           <div className="text-2xl font-mono">Hi, my name is</div>
           <h1 className="text-6xl font-bold">Aditya Nandan.</h1>
           <h2 className="text-6xl font-thin">
-            I build{" "}
-            <span className="text-primary hover:font-bold transform hover:-rotate-6 inline-block transition-all duration-100 cursor-pointer active:scale-95 select-none">
-              stuff.
-            </span>
+            I build <Stuff />
           </h2>
           <p className="opacity-50">
             I’m a pre-final year CSE student and passionate builder who loves
