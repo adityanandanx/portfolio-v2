@@ -3,6 +3,7 @@ import Stuff from "../specific/stuff";
 import { Button } from "../ui/button";
 import SectionContainer from "./section-container";
 import Image from "next/image";
+import Portrait from "../specific/portrait";
 
 type Props = {};
 
@@ -45,13 +46,7 @@ const AboutSection = (props: Props) => {
           {/* <Button variant={"outline"} size={"lg"}>
             Let&lsquo;s Go <ArrowDown />
           </Button> */}
-          <Image
-            src={"/images/adi.jpeg"}
-            alt="Aditya Nandan"
-            width={460}
-            height={460}
-            className="rounded-full"
-          />
+          <Portrait />
         </div>
       </div>
     </SectionContainer>
