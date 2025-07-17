@@ -21,7 +21,7 @@ const Portrait = (props: Props) => {
           className="rounded-full"
         />
         <Image
-          src={"/icons/face/moustache01.svg"}
+          src={"/icons/face/mustache.svg"}
           alt="moustache"
           className="absolute scale-0 transition-transform group-active:scale-100 -translate-x-1/2 -translate-y-1/2 -rotate-45 group-active:-rotate-12"
           style={{
