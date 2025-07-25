@@ -7,7 +7,7 @@ type Props = {
 
 const SectionContainer = ({ children, className, ...props }: Props) => {
   return (
-    <section className={cn("min-h-screen", className)} {...props}>
+    <section className={cn("min-h-screen px-10", className)} {...props}>
       <div className="max-w-[1200px] mx-auto">{children}</div>
     </section>
   );

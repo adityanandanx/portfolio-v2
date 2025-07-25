@@ -3,12 +3,13 @@ import { Button } from "../ui/button";
 import SectionContainer from "./section-container";
 import ReactCurvedText from "react-curved-text";
 import Stuff from "../specific/stuff";
+import { cn } from "@/lib/utils";
 
 type Props = {};
 
 const HeroSection = (props: Props) => {
   return (
-    <SectionContainer>
+    <SectionContainer className="relative">
       <div className="min-h-screen flex flex-col justify-center">
         <div className="flex flex-col items-start gap-4 max-w-2xl">
           <div className="text-2xl font-mono">Hi, my name is</div>
