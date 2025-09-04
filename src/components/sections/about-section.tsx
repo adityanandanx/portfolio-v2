@@ -3,7 +3,7 @@ import SectionContainer from "./section-container";
 
 const AboutSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="about">
       <div className="min-h-screen flex flex-col justify-center">
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="flex flex-col items-start gap-4">

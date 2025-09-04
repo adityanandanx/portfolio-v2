@@ -7,7 +7,7 @@ import SectionContainer from "./section-container";
 
 const HeroSection = () => {
   return (
-    <SectionContainer className="relative">
+    <SectionContainer id="hero" className="relative">
       <div className="min-h-screen flex flex-col justify-center">
         <div className="flex flex-col items-center mx-auto text-center gap-4">
           <div className="flex gap-4 items-center">

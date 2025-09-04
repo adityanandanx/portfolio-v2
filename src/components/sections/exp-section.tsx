@@ -12,7 +12,7 @@ import SectionContainer from "./section-container";
 
 const ExpSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="exp">
       <div className="min-h-screen flex flex-col justify-center">
         <div className="flex gap-10 items-center ">
           <div className="flex flex-col items-start gap-4 w-full">

@@ -8,11 +8,11 @@ import { LinkedinIcon } from "lucide-react";
 import { NavLink, Project, SocialLink } from "./types";
 
 export const navLinks: NavLink[] = [
-  { href: "/", text: "About" },
-  { href: "/", text: "Experience" },
-  { href: "/", text: "Projects" },
-  { href: "/", text: "Award" },
-  { href: "/", text: "Contact" },
+  { href: "/#about", text: "About" },
+  { href: "/#exp", text: "Experience" },
+  { href: "/#projects", text: "Projects" },
+  { href: "/#award", text: "Award" },
+  { href: "/#contact", text: "Contact" },
 ];
 
 export const socialLinks: SocialLink[] = [
