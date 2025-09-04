@@ -63,6 +63,36 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      <svg className="absolute inset-0 w-full h-full">
+        <g width={"100%"} filter="url(#blur)" className="opacity-50">
+          <circle r={100} cx={"30%"} cy="50%" fill="#AF1B3F" />
+          <circle r={150} cx={"50%"} cy="50%" fill="#bada55" />
+          <circle r={100} cx={"70%"} cy="50%" fill="#0D3B66" />
+        </g>{" "}
+        <defs>
+          <filter id="blur" x="-50%" y="-50%" width={"400%"} height={"400%"}>
+            <feGaussianBlur stdDeviation={100} in="SourceGraphic" result="1" />
+            <feTurbulence
+              id="turb"
+              type="turbulence"
+              stitchTiles="stitch"
+              baseFrequency="0.004"
+              numOctaves="2"
+              in="1"
+              result="2"
+            />
+            <feDisplacementMap
+              in="1"
+              in2="2"
+              result="afterdisp"
+              scale="100"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+        </defs>
+      </svg>
     </SectionContainer>
   );
 };
