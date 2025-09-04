@@ -1,4 +1,14 @@
-import { ArrowDown, IndianRupeeIcon, SendIcon } from "lucide-react";
+import {
+  ArrowDown,
+  DownloadCloudIcon,
+  DownloadIcon,
+  FileDownIcon,
+  FileIcon,
+  FilesIcon,
+  FileUserIcon,
+  IndianRupeeIcon,
+  SendIcon,
+} from "lucide-react";
 import { Button } from "../ui/button";
 import SectionContainer from "./section-container";
 import ReactCurvedText from "react-curved-text";
@@ -32,10 +42,10 @@ const HeroSection = (props: Props) => {
             </div>
           </div>
           <h1 className="flex flex-wrap items-center justify-center gap-x-4">
-            <span className="text-[12vh] flex flex-col uppercase font-sans font-bold leading-none">
+            <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
               FULLSTACK
             </span>
-            <span className="text-[12vh] flex flex-col uppercase font-sans font-bold leading-none">
+            <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
               DEVELOPER
             </span>
             <button className="cursor-pointer inline-flex gap-2 items-center px-4 py-2 rounded-full border-primary border hover:bg-primary hover:text-primary-foreground transition-colors duration-75">
@@ -50,9 +60,21 @@ const HeroSection = (props: Props) => {
             technologies. As a pre-final year Computer Science student, I
             transform complex challenges into functional and polished software.
           </p> */}
-          <Button variant={"outline"} size={"lg"}>
-            Let&lsquo;s Go <ArrowDown />
-          </Button>
+          <div className="space-x-5">
+            <Button variant={"outline"} size={"lg"}>
+              Resume <FileDownIcon />
+            </Button>
+            <Button variant={"default"} size={"lg"} className="group">
+              Let&lsquo;s Go
+              <div className="h-full flex flex-col gap-0 items-center justify-center w-3 group-hover:translate-y-4 transition-transform duration-300">
+                <ArrowDown
+                  className="absolute -translate-y-full opacity-0 transition-opacity group-hover:opacity-100 h-3 duration-300"
+                  aria-hidden
+                />
+                <ArrowDown className="absolute opacity-100 transition-opacity group-hover:opacity-0 h-3 duration-300" />
+              </div>
+            </Button>
+          </div>
         </div>
       </div>
     </SectionContainer>
