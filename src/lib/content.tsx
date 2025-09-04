@@ -5,7 +5,7 @@ import {
   SiX,
 } from "@icons-pack/react-simple-icons";
 import { LinkedinIcon } from "lucide-react";
-import { NavLink, Project, SocialLink } from "./types";
+import { NavLink, Project, SocialLink, AwardItem } from "./types";
 
 export const navLinks: NavLink[] = [
   { href: "/#about", text: "About" },
@@ -99,6 +99,42 @@ export const projects: Project[] = [
       "Handwriting Generation",
       "A4 Layout",
       "API",
+    ],
+  },
+];
+
+export const awards: AwardItem[] = [
+  {
+    title: "AWS Jam Winner 2025",
+    organization: "Graphic Era University",
+    from: "2025",
+    details: [
+      "Winner, campus-wide cloud & DevOps hackathon solving Amazon Web Services architecture and operations challenges.",
+    ],
+  },
+  {
+    title: "IIT Ropar Advitiya Game Jam 2025",
+    organization: "IIT Ropar",
+    from: "2025",
+    details: [
+      "1st place (BitFlip) — national 72-hour game development hackathon.",
+    ],
+  },
+  {
+    title: "HackTheHills 2024",
+    organization: "DIT University",
+    from: "2024",
+    details: [
+      "2nd place (ScripturaAI) — national coding hackathon with 50+ teams.",
+    ],
+  },
+  {
+    title: "IndiaSkills Web Technologies (May 2024)",
+    organization: "National Skill Development Corporation",
+    from: "May 2024",
+    details: [
+      "Bronze Medalist – National finals (500+ participants).",
+      "Gold Medalist – Uttarakhand region (top among 50+ competitors).",
     ],
   },
 ];
