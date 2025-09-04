@@ -8,7 +8,7 @@ import SectionContainer from "./section-container";
 const HeroSection = () => {
   return (
     <SectionContainer id="hero" className="relative">
-      <div className="min-h-screen flex flex-col justify-center">
+      <div className="min-h-screen flex flex-col justify-center z-20">
         <div className="flex flex-col items-center mx-auto text-center gap-4">
           <div className="flex gap-4 items-center">
             <Avatar className="size-20 border-2 border-white">
@@ -64,7 +64,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <svg className="absolute inset-0 w-full h-full">
+      <svg className="absolute inset-0 w-full h-full -z-10 pointer-events-none">
         <g width={"100%"} filter="url(#blur)" className="opacity-50">
           <circle r={100} cx={"30%"} cy="50%" fill="#AF1B3F" />
           <circle r={150} cx={"50%"} cy="50%" fill="#bada55" />
