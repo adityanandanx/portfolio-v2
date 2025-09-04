@@ -1,11 +1,9 @@
 import { navLinks } from "@/lib/content";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Button } from "../ui/button";
 
-type Props = {};
-
-const NavBar = (props: Props) => {
+const NavBar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 backdrop-blur-xl z-50">
       <nav className="mx-auto py-6 px-10 flex justify-between">

@@ -1,13 +1,7 @@
-import { ArrowDown } from "lucide-react";
-import Stuff from "../specific/stuff";
-import { Button } from "../ui/button";
-import SectionContainer from "./section-container";
-import Image from "next/image";
 import Portrait from "../specific/portrait";
+import SectionContainer from "./section-container";
 
-type Props = {};
-
-const AboutSection = (props: Props) => {
+const AboutSection = () => {
   return (
     <SectionContainer>
       <div className="min-h-screen flex flex-col justify-center">
@@ -22,8 +16,8 @@ const AboutSection = (props: Props) => {
             </div>
             <div className="opacity-50 space-y-3">
               <p>
-                Hello! I'm a passionate and dedicated software developer from
-                India. As a pre-final year Computer Science student, I am
+                Hello! I{"'"}m a passionate and dedicated software developer
+                from India. As a pre-final year Computer Science student, I am
                 constantly expanding my technical expertise and applying it to
                 practical challenges.
               </p>

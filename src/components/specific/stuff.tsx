@@ -1,15 +1,10 @@
 "use client";
 import { stuff } from "@/lib/content";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import ReactCurvedText from "react-curved-text";
 
-type Props = {};
-
-const Stuff = ({}: Props) => {
-  const stuffText = useMemo(
-    () => stuff.reduce((p, c) => p + " • " + c),
-    [stuff]
-  );
+const Stuff = () => {
+  const stuffText = useMemo(() => stuff.reduce((p, c) => p + " • " + c), []);
   return (
     <div className="inline-block relative group">
       <span className="text-primary group-hover:font-bold transform group-hover:-rotate-6 inline-block transition-all duration-100 cursor-pointer active:scale-95 select-none">

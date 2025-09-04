@@ -1,25 +1,11 @@
-import {
-  ArrowDown,
-  DownloadCloudIcon,
-  DownloadIcon,
-  FileDownIcon,
-  FileIcon,
-  FilesIcon,
-  FileUserIcon,
-  IndianRupeeIcon,
-  SendIcon,
-} from "lucide-react";
+import { ArrowDown, FileDownIcon, SendIcon } from "lucide-react";
+import Image from "next/image";
+import Stuff from "../specific/stuff";
+import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import SectionContainer from "./section-container";
-import ReactCurvedText from "react-curved-text";
-import Stuff from "../specific/stuff";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { Avatar, AvatarImage } from "../ui/avatar";
 
-type Props = {};
-
-const HeroSection = (props: Props) => {
+const HeroSection = () => {
   return (
     <SectionContainer className="relative">
       <div className="min-h-screen flex flex-col justify-center">

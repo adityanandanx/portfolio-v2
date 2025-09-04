@@ -1,9 +1,7 @@
 import { socialLinks } from "@/lib/content";
 import Link from "next/link";
 
-type Props = {};
-
-const Socials = (props: Props) => {
+const Socials = () => {
   return (
     <aside className="fixed left-0 bottom-0 hidden xl:block">
       <div className="p-5 flex flex-col gap-5 items-center">

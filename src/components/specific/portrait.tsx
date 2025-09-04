@@ -1,13 +1,11 @@
 import Image from "next/image";
 
-type Props = {};
-
 // Coordiantes in percentage [x%, y%]
 const points: { [k: string]: [number, number] } = {
   mustache: [43, 62],
 };
 
-const Portrait = (props: Props) => {
+const Portrait = () => {
   return (
     <div className="group min-w-[256px] max-w-[460px] w-full aspect-square relative cursor-pointer active:scale-95 transition-transform">
       <div className="absolute inset-0 bg-primary rounded-full -z-10 group-hover:translate-y-3 transition-transform"></div>

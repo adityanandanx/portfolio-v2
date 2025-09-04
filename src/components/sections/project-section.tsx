@@ -15,9 +15,7 @@ import {
 } from "../ui/card";
 import SectionContainer from "./section-container";
 
-type Props = {};
-
-const ProjectSection = (props: Props) => {
+const ProjectSection = () => {
   return (
     <SectionContainer id="projects">
       <div className="min-h-screen flex flex-col justify-center">

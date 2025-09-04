@@ -1,4 +1,6 @@
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { ReactNode } from "react";
 import {
   Card,
   CardContent,
@@ -7,12 +9,8 @@ import {
   CardTitle,
 } from "../ui/card";
 import SectionContainer from "./section-container";
-import { ArrowBigRightIcon, ArrowUpRight } from "lucide-react";
-import { ReactNode } from "react";
 
-type Props = {};
-
-const ExpSection = (props: Props) => {
+const ExpSection = () => {
   return (
     <SectionContainer>
       <div className="min-h-screen flex flex-col justify-center">
