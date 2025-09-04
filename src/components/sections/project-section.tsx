@@ -46,22 +46,32 @@ const Project = ({
   project: Project;
 }) => {
   return (
-    <Card className="w-full pt-0 hover:shadow-2xl shadow-black transition-[box-shadow,scale] scale-100 hover:scale-[101%]">
-      {coverImg ? (
-        <Image
-          src={coverImg}
-          alt={title + " cover image"}
-          className="w-full h-auto object-cover aspect-video object-top"
-          width={578}
-          height={325}
-        />
-      ) : (
-        <div className="w-full h-auto aspect-video flex items-center justify-center">
-          <ImageIcon className="text-muted-foreground opacity-20" size={64} />
-        </div>
-      )}
+    <Card className="w-full pt-0 hover:shadow-2xl shadow-black transition-shadow group">
+      <div className="w-full h-auto aspect-video overflow-hidden">
+        {coverImg ? (
+          <Image
+            src={coverImg}
+            alt={title + " cover image"}
+            className="w-full h-full object-top object-cover group-hover:scale-[101%] transition-transform"
+            width={578}
+            height={325}
+          />
+        ) : (
+          <div className="flex items-center justify-center w-full h-full">
+            <ImageIcon className="text-muted-foreground opacity-20" size={64} />
+          </div>
+        )}
+      </div>
       <CardHeader>
-        <CardTitle className="text-3xl">{title}</CardTitle>
+        <CardTitle className="text-3xl">
+          <a
+            href={href ? href : githubLink}
+            target="_blank"
+            className="hover:underline underline-offset-2"
+          >
+            {title}
+          </a>
+        </CardTitle>
         <CardDescription>{desc}</CardDescription>
       </CardHeader>
       <CardContent>
