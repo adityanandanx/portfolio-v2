@@ -8,6 +8,7 @@ import {
 } from "../ui/card";
 import SectionContainer from "./section-container";
 import { ArrowBigRightIcon, ArrowUpRight } from "lucide-react";
+import { ReactNode } from "react";
 
 type Props = {};
 
@@ -25,63 +26,99 @@ const ExpSection = (props: Props) => {
               <hr className="flex-1" />
             </div>
             <div className="space-y-3">
-              <div className="flex items-start py-5">
-                <a
-                  href="https://www.quivr.com/"
-                  target="_blank"
-                  className="group relative"
-                  aria-label="Link to quivr.com"
-                >
-                  <Image
-                    src={"/images/quivr.jpeg"}
-                    alt="Quivr Logo"
-                    className="w-[160px] h-[160px] rounded-lg group-hover:opacity-25 transition-opacity"
-                    width={160}
-                    height={160}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
-                    <ArrowUpRight size={64} />
-                  </div>
-                </a>
-                <Card className="p-0 bg-transparent gap-3 border-none">
-                  <CardHeader className="">
-                    <CardTitle className="text-xl">
-                      Frontend Intern{" "}
-                      <a
-                        href="https://www.quivr.com/"
-                        target="_blank"
-                        className="text-primary"
-                      >
-                        @ Quivr (YC W24)
-                      </a>
-                    </CardTitle>
-                    <CardDescription className="font-mono text-base">
-                      <span>Sep 2024 - Nov 2024</span>
-                      <br />
-                      <span>Remote</span>
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="">
-                    <ul className="list-outside ml-5 list-disc">
-                      <li>
-                        Integrated rich text note-taking feature in React
-                        codebase
-                      </li>
-                      <li>Developed using React.js, Next.js, SCSS, TipTap</li>
-                      <li>
-                        Enabled creation, management, and querying of notes
-                        using retrieval-augmented generation (RAG)
-                        conversational artificial intelligence
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
+              <Exp
+                href="https://www.quivr.com/"
+                logo="/images/quivr.jpeg"
+                ariaLabel="Link to Quivr's website"
+                position="Frontend Intern"
+                company="Quivr (YC W24)"
+                location="Remote"
+                from="Sep 2024"
+                to="Nov 2024"
+              >
+                <ul className="list-outside ml-5 list-disc">
+                  <li>
+                    Integrated rich text note-taking feature in React codebase
+                  </li>
+                  <li>Developed using React.js, Next.js, SCSS, TipTap</li>
+                  <li>
+                    Enabled creation, management, and querying of notes using
+                    retrieval-augmented generation (RAG) conversational
+                    artificial intelligence
+                  </li>
+                </ul>
+              </Exp>
             </div>
           </div>
         </div>
       </div>
     </SectionContainer>
+  );
+};
+
+const Exp = ({
+  href,
+  logo,
+  ariaLabel,
+  position,
+  company,
+  from,
+  to,
+  location,
+  children,
+}: {
+  href: string;
+  logo: string;
+  ariaLabel: string;
+  position: string;
+  company: string;
+  from: string;
+  to: string;
+  location: string;
+  children: ReactNode;
+}) => {
+  return (
+    <div className="flex items-start py-5">
+      <a
+        href={href}
+        target="_blank"
+        className="group relative"
+        aria-label={ariaLabel}
+      >
+        <Image
+          src={logo}
+          alt={`${company} Logo`}
+          className="w-[160px] h-[160px] rounded-lg group-hover:opacity-25 transition-opacity"
+          width={160}
+          height={160}
+        />
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+          <ArrowUpRight size={64} />
+        </div>
+      </a>
+      <Card className="p-0 bg-transparent gap-3 border-none">
+        <CardHeader className="">
+          <CardTitle className="text-xl">
+            {position}{" "}
+            <a
+              href="https://www.quivr.com/"
+              target="_blank"
+              className="text-primary"
+            >
+              @ {company}
+            </a>
+          </CardTitle>
+          <CardDescription className="font-mono text-base">
+            <span>
+              {from} - {to}
+            </span>
+            <br />
+            <span>{location}</span>
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="">{children}</CardContent>
+      </Card>
+    </div>
   );
 };
 
