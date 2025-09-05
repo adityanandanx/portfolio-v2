@@ -76,7 +76,7 @@ const Exp = ({
   children: ReactNode;
 }) => {
   return (
-    <div className="flex items-start py-5">
+    <div className="flex flex-col md:flex-row items-start gap-5 py-5">
       <a
         href={href}
         target="_blank"
@@ -94,8 +94,8 @@ const Exp = ({
           <ArrowUpRight size={64} />
         </div>
       </a>
-      <Card className="p-0 bg-transparent gap-3 border-none">
-        <CardHeader className="">
+      <Card className="p-0 bg-transparent flex-1 gap-3 border-none">
+        <CardHeader className="px-0">
           <CardTitle className="text-xl">
             {position}{" "}
             <a
@@ -114,7 +114,7 @@ const Exp = ({
             <span>{location}</span>
           </CardDescription>
         </CardHeader>
-        <CardContent className="">{children}</CardContent>
+        <CardContent className="px-0">{children}</CardContent>
       </Card>
     </div>
   );
