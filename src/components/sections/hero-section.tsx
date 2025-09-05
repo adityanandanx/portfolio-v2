@@ -36,9 +36,11 @@ const HeroSection = () => {
             <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
               DEVELOPER
             </span>
-            <button className="cursor-pointer inline-flex gap-2 items-center px-4 py-2 rounded-full border-primary border hover:bg-primary hover:text-primary-foreground transition-colors duration-75">
-              <SendIcon /> Contact Me
-            </button>
+            <Link href={"/#contact"}>
+              <button className="cursor-pointer inline-flex gap-2 items-center px-4 py-2 rounded-full border-primary border hover:bg-primary hover:text-primary-foreground transition-colors duration-75">
+                <SendIcon /> Contact Me
+              </button>
+            </Link>
           </h1>
           <h2 className="text-4xl font-thin">
             I build <Stuff />
