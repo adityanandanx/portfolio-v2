@@ -9,10 +9,9 @@ export const size = {
 };
 export const contentType = "image/png";
 
-// Simple dynamic OG generator; can be extended with query params
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const title = searchParams.get("title") || "Aditya Nandan";
+// Simple dynamic OG generator
+export default async function Image() {
+  const title = "Aditya Nandan";
 
   return new ImageResponse(
     (
@@ -29,7 +28,7 @@ export async function GET(req: Request) {
           fontSize: 64,
           fontFamily: "system-ui, Inter, sans-serif",
           backgroundImage:
-            "radial-gradient(circle at 30% 50%, #AF1B3F55, transparent 60%), radial-gradient(circle at 70% 50%, #0D3B6655, transparent 60%)",
+            "radial-gradient(circle at 10% 1%, #bada5555, transparent 100%), radial-gradient(circle at 70% 50%, #0D3B6655, transparent 60%)",
         }}
       >
         <div style={{ fontSize: 28, opacity: 0.7, marginBottom: 16 }}>
