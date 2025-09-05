@@ -20,6 +20,12 @@ const Footer = () => {
   return (
     <footer className="px-6 md:px-10 py-10 border-t mt-10">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-6 items-center text-center">
+        <Link
+          href={"/"}
+          className="font-serif text-4xl italic font-thin text-left group flex flex-wrap"
+        >
+          Aditya Nandan
+        </Link>
         <div className="flex flex-wrap gap-3 justify-center">
           {socialLinks.map((s, i) => (
             <Link

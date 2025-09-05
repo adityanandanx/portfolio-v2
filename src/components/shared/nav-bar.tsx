@@ -8,8 +8,22 @@ const NavBar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 backdrop-blur-xl z-50">
       <nav className="mx-auto py-6 px-10 flex justify-between">
-        <Link href={"/"} className="font-serif text-4xl italic font-thin">
+        {/* <Link href={"/"} className="font-serif text-4xl italic font-thin">
           AN
+        </Link> */}
+
+        <Link
+          href={"/"}
+          className="font-serif text-4xl italic font-thin text-left group flex flex-wrap"
+        >
+          A
+          <span className="group-hover:max-w-full max-w-0 inline-block self-baseline overflow-hidden transition-all opacity-0 group-hover:opacity-100 duration-700">
+            ditya
+          </span>
+          N
+          <span className="group-hover:max-w-full max-w-0 inline-block self-baseline overflow-hidden transition-all opacity-0 group-hover:opacity-100 duration-700">
+            andan
+          </span>
         </Link>
         <ul className="flex items-center gap-8">
           {navLinks.map((navLink, i) => (
