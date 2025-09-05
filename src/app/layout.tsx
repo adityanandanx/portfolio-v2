@@ -39,22 +39,12 @@ export const metadata: Metadata = {
     title: titleDefault,
     siteName,
     description,
-    images: [
-      {
-        url: `${siteUrl}/api/og?title=Portfolio`,
-        width: 1200,
-        height: 630,
-        alt: "Aditya Nandan – Full-Stack & AI Developer",
-      },
-    ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     creator: "@adithatsit",
     title: titleDefault,
-    description,
-    images: [`${siteUrl}/api/og?title=Portfolio`],
   },
   category: "technology",
   robots: {
