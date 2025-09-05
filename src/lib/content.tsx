@@ -138,3 +138,5 @@ export const awards: AwardItem[] = [
     ],
   },
 ];
+
+export const EMAIL = "nandanaditya985@gmail.com";

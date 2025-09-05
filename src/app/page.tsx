@@ -1,5 +1,6 @@
 import AboutSection from "@/components/sections/about-section";
 import AwardSection from "@/components/sections/award-section";
+import ContactSection from "@/components/sections/contact-section";
 import ExpSection from "@/components/sections/exp-section";
 import HeroSection from "@/components/sections/hero-section";
 import ProjectSection from "@/components/sections/project-section";
@@ -13,6 +14,7 @@ export default function Home() {
       <ExpSection />
       <ProjectSection />
       <AwardSection />
+      <ContactSection />
       <Socials />
     </main>
   );
