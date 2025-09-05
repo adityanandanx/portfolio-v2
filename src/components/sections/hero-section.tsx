@@ -4,6 +4,8 @@ import Stuff from "../specific/stuff";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import SectionContainer from "./section-container";
+import Link from "next/link";
+import ResumeLink from "../specific/resume-link";
 
 const HeroSection = () => {
   return (
@@ -47,19 +49,23 @@ const HeroSection = () => {
             transform complex challenges into functional and polished software.
           </p> */}
           <div className="space-x-5">
-            <Button variant={"outline"} size={"lg"}>
-              Resume <FileDownIcon />
-            </Button>
-            <Button variant={"default"} size={"lg"} className="group">
-              Let&lsquo;s Go
-              <div className="h-full flex flex-col gap-0 items-center justify-center w-3 group-hover:translate-y-4 transition-transform duration-300">
-                <ArrowDown
-                  className="absolute -translate-y-full opacity-0 transition-opacity group-hover:opacity-100 h-3 duration-300"
-                  aria-hidden
-                />
-                <ArrowDown className="absolute opacity-100 transition-opacity group-hover:opacity-0 h-3 duration-300" />
-              </div>
-            </Button>
+            <ResumeLink>
+              <Button variant={"outline"} size={"lg"}>
+                Resume <FileDownIcon />
+              </Button>
+            </ResumeLink>
+            <Link href={"/#about"}>
+              <Button variant={"default"} size={"lg"} className="group">
+                Let&lsquo;s Go
+                <div className="h-full flex flex-col gap-0 items-center justify-center w-3 group-hover:translate-y-4 transition-transform duration-300">
+                  <ArrowDown
+                    className="absolute -translate-y-full opacity-0 transition-opacity group-hover:opacity-100 h-3 duration-300"
+                    aria-hidden
+                  />
+                  <ArrowDown className="absolute opacity-100 transition-opacity group-hover:opacity-0 h-3 duration-300" />
+                </div>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

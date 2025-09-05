@@ -2,6 +2,7 @@ import { navLinks } from "@/lib/content";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Button } from "../ui/button";
+import ResumeLink from "../specific/resume-link";
 
 const NavBar = () => {
   return (
@@ -19,7 +20,9 @@ const NavBar = () => {
             </li>
           ))}
           <li>
-            <Button>Resume</Button>
+            <ResumeLink>
+              <Button>Resume</Button>
+            </ResumeLink>
           </li>
         </ul>
       </nav>
