@@ -80,6 +80,7 @@ const Exp = ({
       <a
         href={href}
         target="_blank"
+        rel="noopener noreferrer"
         className="group relative"
         aria-label={ariaLabel}
       >
@@ -101,6 +102,7 @@ const Exp = ({
             <a
               href="https://www.quivr.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-primary"
             >
               @ {company}
@@ -108,7 +110,8 @@ const Exp = ({
           </CardTitle>
           <CardDescription className="font-mono text-base">
             <span>
-              {from} - {to}
+              <time dateTime={from}>{from}</time> -{" "}
+              <time dateTime={to}>{to}</time>
             </span>
             <br />
             <span>{location}</span>

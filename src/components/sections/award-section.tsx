@@ -96,6 +96,7 @@ const Award = ({
         <a
           href={href}
           target="_blank"
+          rel="noopener noreferrer"
           className="group relative mr-6"
           aria-label={ariaLabel || `${company} link`}
         >
@@ -119,7 +120,9 @@ const Award = ({
           </CardTitle>
           {(showRange() || location) && (
             <CardDescription className="font-mono text-base">
-              {showRange() && <span>{showRange()}</span>}
+              {showRange() && (
+                <time dateTime={(from || "").toString()}>{showRange()}</time>
+              )}
               {showRange() && location && <br />}
               {location && <span>{location}</span>}
             </CardDescription>
