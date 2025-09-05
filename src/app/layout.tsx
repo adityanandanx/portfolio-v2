@@ -4,7 +4,7 @@ import { fontSans, fontSerif } from "@/lib/fonts";
 import NavBar from "@/components/shared/nav-bar";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://adityanandanx.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://adityanandan.vercel.app";
 const siteName = "Aditya Nandan Portfolio";
 const titleDefault = "Full-Stack & AI Developer";
 const description =
