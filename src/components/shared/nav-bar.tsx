@@ -1,7 +1,7 @@
 "use client";
 import { navLinks, socialLinks } from "@/lib/content";
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import ResumeLink from "../specific/resume-link";
 import { MenuIcon } from "lucide-react";
@@ -14,8 +14,24 @@ import {
   SheetDescription,
   SheetClose,
 } from "../ui/sheet";
+import { cn } from "@/lib/utils";
 
 const NavBar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const vh = window.innerHeight;
+      if (window.scrollY > vh * (2 / 3)) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 backdrop-blur-xl z-50 border-b border-border/50">
       <nav className="mx-auto py-4 px-6 md:px-10 flex justify-between items-center max-w-[1200px]">
@@ -45,9 +61,14 @@ const NavBar = () => {
               </NavLink>
             </li>
           ))}
-          <li>
-            <ResumeLink>
-              <Button>Resume</Button>
+          <li
+            className={cn(
+              "max-w-0 overflow-hidden opacity-0 scale-0 origin-right transition-all w-full bg-red-500",
+              { "max-w-[90px] opacity-100 scale-100": scrolled }
+            )}
+          >
+            <ResumeLink className="w-full bg-red-500">
+              <Button className="w-full">Resume</Button>
             </ResumeLink>
           </li>
         </ul>

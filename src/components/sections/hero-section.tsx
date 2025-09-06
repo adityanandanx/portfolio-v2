@@ -36,11 +36,11 @@ const HeroSection = () => {
             <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
               DEVELOPER
             </span>
-            <Link href={"/#contact"}>
+            <ResumeLink>
               <button className="cursor-pointer inline-flex gap-2 items-center px-4 py-2 rounded-full border-primary border hover:bg-primary hover:text-primary-foreground transition-colors duration-75">
-                <SendIcon /> Contact Me
+                <FileDownIcon /> Resume
               </button>
-            </Link>
+            </ResumeLink>
           </h1>
           <h2 className="text-4xl font-thin">
             I build <Stuff />
@@ -53,7 +53,7 @@ const HeroSection = () => {
           <div className="space-x-5">
             <ResumeLink>
               <Button variant={"outline"} size={"lg"}>
-                Resume <FileDownIcon />
+                Contact me <SendIcon />
               </Button>
             </ResumeLink>
             <Link href={"/#about"}>

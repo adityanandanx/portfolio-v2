@@ -1,8 +1,18 @@
-import React, { PropsWithChildren } from "react";
+import { cn } from "@/lib/utils";
+import React, { HTMLProps, PropsWithChildren } from "react";
 
-const ResumeLink = ({ children }: PropsWithChildren) => {
+const ResumeLink = ({
+  children,
+  className,
+  ...props
+}: PropsWithChildren & HTMLProps<HTMLAnchorElement>) => {
   return (
-    <a href="/AdityaNandanResume.pdf" target="_blank">
+    <a
+      href="/AdityaNandanResume.pdf"
+      target="_blank"
+      className={cn("", className)}
+      {...props}
+    >
       {children}
     </a>
   );
