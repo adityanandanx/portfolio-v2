@@ -9,7 +9,7 @@ import ResumeLink from "../specific/resume-link";
 
 const HeroSection = () => {
   return (
-    <SectionContainer id="hero" className="relative">
+    <SectionContainer id="hero" className="relative overflow-x-hidden">
       <div className="min-h-screen flex flex-col justify-center z-20">
         <div className="flex flex-col items-center mx-auto text-center gap-4">
           <div className="flex gap-4 items-center">
@@ -30,10 +30,10 @@ const HeroSection = () => {
             </div>
           </div>
           <h1 className="flex flex-wrap items-center justify-center gap-x-4">
-            <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
+            <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
               FULLSTACK
             </span>
-            <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
+            <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl flex flex-col uppercase font-sans font-bold leading-none">
               DEVELOPER
             </span>
             <ResumeLink>

@@ -26,7 +26,7 @@ const Footer = () => {
         >
           Aditya Nandan
         </Link>
-        <div className="flex flex-wrap gap-3 justify-center">
+        {/* <div className="flex flex-wrap gap-3 justify-center">
           {socialLinks.map((s, i) => (
             <Link
               key={s.href + i}
@@ -41,7 +41,7 @@ const Footer = () => {
               </span>
             </Link>
           ))}
-        </div>
+        </div> */}
         <button
           onClick={() =>
             navigator.clipboard.writeText(EMAIL).then(() => setCopied(true))

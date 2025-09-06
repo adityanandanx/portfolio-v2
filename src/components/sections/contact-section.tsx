@@ -75,7 +75,7 @@ const ContactSection = () => {
               )}
             </Button>
           </div>
-          <div className="mt-6 flex flex-row items-baseline-last gap-2 text-sm font-mono">
+          <div className="mt-6 flex flex-col md:flex-row md:items-baseline-last gap-2 text-sm font-mono">
             <div
               className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
               onClick={copyEmail}
