@@ -189,7 +189,7 @@ const FloatingKeys = () => {
           </span>
           <span className="fk-cap">
             <span className="fk-legend">
-              {phrase ? phrase[i] : "•"}
+              {phrase ? phrase[i] || " " : "•"}
             </span>
           </span>
           {burst?.i === i && (
