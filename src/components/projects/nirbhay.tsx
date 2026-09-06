@@ -17,18 +17,16 @@ export default function NirbhayPage() {
       />
 
       <div className="mt-8 mb-2">
-        <video
-          className="w-full aspect-video rounded-xl border border-border bg-black"
-          controls
-          preload="none"
-          poster="/images/projects/nirbhay-demo-poster.png"
-        >
-          <source src="/videos/nirbhay-demo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border">
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://embed.figma.com/slides/OQExg7NDuFGN1PTDLglY4k/Nirbhay?node-id=2175-2&embed-host=share"
+            allowFullScreen
+            title="Nirbhay pitch deck"
+          />
+        </div>
         <p className="text-sm opacity-60 mt-2 text-center">
-          Hardware demo: the ESP32 wearable pairing with the Flutter app over
-          BLE (71s).
+          The pitch deck: the problem, the system, and the mission.
         </p>
       </div>
 
@@ -96,6 +94,22 @@ export default function NirbhayPage() {
           working prototype and concept validation, not a clinically validated
           medical device — real-world testing with vulnerable populations and
           healthcare integration remain future work.
+        </p>
+      </Section>
+
+      <Section index="05" title="Hardware demo">
+        <video
+          className="w-full aspect-video rounded-xl border border-border bg-black"
+          controls
+          preload="none"
+          poster="/images/projects/nirbhay-demo-poster.png"
+        >
+          <source src="/videos/nirbhay-demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p className="text-sm opacity-60 mt-2 text-center">
+          Hardware demo: the ESP32 wearable pairing with the Flutter app over
+          BLE (71s).
         </p>
       </Section>
     </>
