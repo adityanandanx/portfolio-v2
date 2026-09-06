@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const PALETTES = {
   cream: {
@@ -39,24 +40,53 @@ type KeySeed = {
 
 const KEY_SIZE = 56;
 
-// Easter egg: read top-to-bottom, alternating sides — "ADITYA WAS HERE"
-const SEEDS: KeySeed[] = [
-  { label: "A", side: "left", offset: "3%", tilt: -9, palette: "cream", depth: 0.06 },
-  { label: "D", side: "right", offset: "4%", tilt: 7, palette: "blue", depth: -0.05 },
-  { label: "I", side: "left", offset: "7%", tilt: 6, palette: "cream", depth: 0.04 },
-  { label: "T", side: "right", offset: "2.5%", tilt: -7, palette: "green", depth: 0.08 },
-  { label: "Y", side: "left", offset: "2%", tilt: 8, palette: "cream", depth: -0.06 },
-  { label: "A", side: "right", offset: "6%", tilt: -6, palette: "cream", depth: 0.05 },
-  { label: "␣", side: "left", offset: "5%", tilt: 7, palette: "cream", depth: -0.04 },
-  { label: "W", side: "right", offset: "3%", tilt: -8, palette: "blue", depth: 0.07 },
-  { label: "A", side: "left", offset: "8%", tilt: 6, palette: "cream", depth: -0.07 },
-  { label: "S", side: "right", offset: "5%", tilt: -5, palette: "cream", depth: 0.06 },
-  { label: "␣", side: "left", offset: "3.5%", tilt: 8, palette: "cream", depth: -0.05 },
-  { label: "H", side: "right", offset: "7%", tilt: -7, palette: "cream", depth: 0.05 },
-  { label: "E", side: "left", offset: "11%", tilt: -6, palette: "green", depth: 0.09 },
-  { label: "R", side: "right", offset: "10%", tilt: 7, palette: "blue", depth: -0.08 },
-  { label: "E", side: "left", offset: "12%", tilt: -5, palette: "cream", depth: 0.08 },
+// Easter egg phrases — exactly 15 characters each (15 key slots).
+// Read top-to-bottom, alternating sides.
+const PHRASES = [
+  "ADITYA WAS HERE",
+  "HELLO WORLD LOL",
+  "TYPE TO BELIEVE",
+  "CSS IS AWESOME!",
+  "GOT PUSHED -F!!",
+  "SHIP IT OR ELSE",
+  "PRESS ANY KEY!!",
+  "KEYBOARD WARR10",
+  "CTRL+Z MY LIFE!",
+  "DEV LIFE CHOOSE",
+  "BUILD > PERFECT",
+  "IT WORKS ON MY💻",
+  "SUDO MAKE BRIX?",
+  "HELLO FR0M IND!",
+  "N0 BUGS ONLY!!!",
+  "CODE,COFFEE,Zzz",
 ];
+
+const KEY_STYLE_SEEDS = [
+  { side: "left", offset: "3%", tilt: -9, palette: "cream", depth: 0.06 },
+  { side: "right", offset: "4%", tilt: 7, palette: "blue", depth: -0.05 },
+  { side: "left", offset: "7%", tilt: 6, palette: "cream", depth: 0.04 },
+  { side: "right", offset: "2.5%", tilt: -7, palette: "green", depth: 0.08 },
+  { side: "left", offset: "2%", tilt: 8, palette: "cream", depth: -0.06 },
+  { side: "right", offset: "6%", tilt: -6, palette: "cream", depth: 0.05 },
+  { side: "left", offset: "5%", tilt: 7, palette: "cream", depth: -0.04 },
+  { side: "right", offset: "3%", tilt: -8, palette: "blue", depth: 0.07 },
+  { side: "left", offset: "8%", tilt: 6, palette: "cream", depth: -0.07 },
+  { side: "right", offset: "5%", tilt: -5, palette: "cream", depth: 0.06 },
+  { side: "left", offset: "3.5%", tilt: 8, palette: "cream", depth: -0.05 },
+  { side: "right", offset: "7%", tilt: -7, palette: "cream", depth: 0.05 },
+  { side: "left", offset: "11%", tilt: -6, palette: "green", depth: 0.09 },
+  { side: "right", offset: "10%", tilt: 7, palette: "blue", depth: -0.08 },
+  { side: "left", offset: "12%", tilt: -5, palette: "cream", depth: 0.08 },
+] as const;
+
+const SEEDS: KeySeed[] = KEY_STYLE_SEEDS.map((seed, i) => ({
+  ...seed,
+  side: seed.side as "left" | "right",
+  palette: seed.palette as Palette,
+  label: "•",
+}));
+
+const pickPhrase = () => PHRASES[Math.floor(Math.random() * PHRASES.length)];
 
 const KEYS = SEEDS.map((seed, i) => ({
   ...seed,
@@ -75,12 +105,18 @@ const makeParticles = () =>
 type Particle = ReturnType<typeof makeParticles>[number];
 
 const FloatingKeys = () => {
+  const [phrase, setPhrase] = useState<string | null>(null);
   const [pressed, setPressed] = useState<number | null>(null);
   const [burst, setBurst] = useState<{ i: number; n: number; particles: Particle[] } | null>(null);
   const timer = useRef<number | null>(null);
   const burstTimer = useRef<number | null>(null);
   const burstCount = useRef(0);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setPhrase(pickPhrase());
+  }, [pathname]);
 
   useEffect(() => {
     let raf = 0;
@@ -127,7 +163,7 @@ const FloatingKeys = () => {
     <div className="fk-layer pointer-events-none select-none">
       {KEYS.map((k, i) => (
         <button
-          key={k.label + k.top + k.side}
+          key={k.top + k.side}
           type="button"
           tabIndex={-1}
           aria-hidden
@@ -152,7 +188,9 @@ const FloatingKeys = () => {
             <span className="fk-stem-h" />
           </span>
           <span className="fk-cap">
-            <span className="fk-legend">{k.label}</span>
+            <span className="fk-legend">
+              {phrase ? phrase[i] : "•"}
+            </span>
           </span>
           {burst?.i === i && (
             <span className="fk-burst" key={burst.n} aria-hidden>
