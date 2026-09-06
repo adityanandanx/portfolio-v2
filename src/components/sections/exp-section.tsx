@@ -36,13 +36,53 @@ const ExpSection = () => {
               >
                 <ul className="list-outside ml-5 list-disc">
                   <li>
-                    Integrated rich text note-taking feature in React codebase
+                    Built the notetaker feature end-to-end from scratch (8
+                    PRs, 6 merged) with TipTap/ProseMirror, shipping a
+                    formatting toolbar, sticky search bar, and scoped styling
+                    as Notetaker 0.1
                   </li>
-                  <li>Developed using React.js, Next.js, SCSS, TipTap</li>
                   <li>
-                    Enabled creation, management, and querying of notes using
-                    retrieval-augmented generation (RAG) conversational
-                    artificial intelligence
+                    Implemented &quot;@&quot;-mention brain selection, Mod+F
+                    search bar, and a shared ChatBar reused across search and
+                    notetaker with note-scoped conversations
+                  </li>
+                  <li>
+                    Designed a custom TipTap AIHighlight extension marking AI
+                    output as provisional with explicit accept/decline actions
+                  </li>
+                  <li>
+                    Resynced a release branch diverged 500+ files from main
+                    and fixed editor/search-bar toggling to unblock the 0.1
+                    release; shipped a Whisper-based STT/TTS chatbot example
+                    with 11-language translations
+                  </li>
+                </ul>
+              </Exp>
+              <Exp
+                href="https://www.quivr.com/"
+                logo="/images/quivr.jpeg"
+                ariaLabel="Link to Quivr's website"
+                position="Open Source Contributor"
+                company="Quivr (YC W24)"
+                location="Remote"
+                from="May 2023"
+                to="Jul 2023"
+              >
+                <ul className="list-outside ml-5 list-disc">
+                  <li>
+                    Restructured the prototype to the Next.js App Router and
+                    built the first reusable primitives (Button, NavBar,
+                    Modal, Toast, Tooltip)
+                  </li>
+                  <li>
+                    Built multi-conversation chat with Supabase-backed history
+                    via a React context layer after the initial hook caused
+                    duplicate API calls
+                  </li>
+                  <li>
+                    Designed the multi-brain architecture and shipped a
+                    searchable brain switcher on Radix UI popovers with inline
+                    creation and deletion
                   </li>
                 </ul>
               </Exp>
