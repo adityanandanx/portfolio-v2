@@ -121,3 +121,203 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ---- decorative keycaps (scroll with content, sides only) ---- */
+
+.fk-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fk {
+  position: absolute;
+  width: 56px;
+  height: 52px;
+  pointer-events: auto;
+  transform: translateY(var(--par, 0px)) rotate(var(--tilt, 0deg));
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fk:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+/* light housing with switch internals hint */
+.fk-housing {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    rgba(240, 238, 230, 0.9),
+    rgba(205, 201, 188, 0.85)
+  );
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+    0 14px 24px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  transition: all 0.15s ease-out;
+}
+
+.fk-housing::before {
+  content: "";
+  position: absolute;
+  inset: 14% 26%;
+  border-radius: 6px;
+  background: linear-gradient(160deg, #e2ded2, #b5b0a0);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* mx-style cross stem */
+.fk-stem {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  width: 30%;
+  height: 26%;
+  transform: translate(-50%, -50%);
+}
+
+.fk-stem-v,
+.fk-stem-h {
+  position: absolute;
+  background: linear-gradient(180deg, #e8e4da, #b9b4a4);
+  border-radius: 2px;
+}
+
+.fk-stem-v {
+  left: 50%;
+  top: 0;
+  width: 34%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.fk-stem-h {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 34%;
+  transform: translateY(-50%);
+}
+
+/* sculpted keycap */
+.fk-cap {
+  position: absolute;
+  left: 4%;
+  top: 0;
+  width: 92%;
+  height: 74%;
+  border-radius: 12% 12% 14% 14% / 22% 22% 26% 26%;
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgba(255, 255, 255, 0.75),
+      transparent 55%
+    ),
+    linear-gradient(
+      168deg,
+      var(--cap-top-hi, #fdfcf8) 0%,
+      var(--cap-top-lo, #ddd9cc) 100%
+    );
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.85),
+    inset 0 -6px 10px rgba(0, 0, 0, 0.18),
+    inset 3px 0 6px rgba(255, 255, 255, 0.35),
+    inset -3px -2px 8px rgba(0, 0, 0, 0.12),
+    0 3px 0 var(--cap-side-lo, #bdb9aa),
+    0 5px 1px rgba(0, 0, 0, 0.22),
+    0 12px 18px rgba(0, 0, 0, 0.38);
+  transform: perspective(260px) rotateX(14deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+.fk-legend {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--cap-text, #55503f);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: perspective(260px) rotateX(-14deg);
+  user-select: none;
+}
+
+.fk-pressed .fk-cap {
+  transform: perspective(260px) rotateX(14deg) translateY(8px) scaleY(0.94);
+}
+
+.fk-pressed .fk-housing {
+  transform: perspective(260px) rotateX(7deg) translateY(8px) scaleY(0.64);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+    0 6px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* click burst particles */
+.fk-burst {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.fk-particle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--len, 18px);
+  height: 5px;
+  margin-left: calc(var(--len, 18px) / -2);
+  margin-top: -2.5px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #bada55, #9ec23a);
+  box-shadow: 0 0 8px rgba(186, 218, 85, 0.6);
+  opacity: 0;
+  transform-origin: center;
+  transform: rotate(var(--angle, 0deg)) translateX(8px) scale(0.4);
+  animation: fk-burst 0.55s cubic-bezier(0.16, 0.84, 0.44, 1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes fk-burst {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle, 0deg)) translateX(6px) scale(0.4);
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle, 0deg)) translateX(var(--dist, 60px)) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fk {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .fk {
+    display: none;
+  }
+}

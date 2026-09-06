@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { fontSans, fontSerif } from "@/lib/fonts";
 import NavBar from "@/components/shared/nav-bar";
+import FloatingKeys from "@/components/specific/floating-keys";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://adityanandan.vercel.app";
@@ -68,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${fontSans.variable} ${fontSerif.variable} antialiased font-sans dark`}
+        className={`${fontSans.variable} ${fontSerif.variable} antialiased font-sans dark relative`}
       >
         <a
           href="#hero"
@@ -77,6 +78,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <NavBar />
+        <FloatingKeys />
         {children}
         <script
           // Structured Data
