@@ -58,8 +58,8 @@ export default function HeimdallPage() {
           ]}
         />
         <Figure
-          src="/images/projects/heimdall-1.png"
-          alt="Heimdall day timeline: captured frames with metadata and OCR text"
+          src="/images/projects/heimdall-day.png"
+          alt="Heimdall day timeline: a captured YouTube frame with metadata, OCR text, and the day strip"
           caption="Day timeline: every captured frame with its text, browsable per day."
         />
       </Section>
@@ -77,9 +77,9 @@ export default function HeimdallPage() {
           away. The whole flow is visible in the public issue archive.
         </p>
         <Figure
-          src="/images/projects/heimdall-3.png"
-          alt="Heimdall sessions view: watch sessions with per-video stats and transcripts"
-          caption="Sessions: watch history with coverage stats and transcripts."
+          src="/images/projects/heimdall-search.png"
+          alt="Heimdall search: full-text search across captured text with filters and scores"
+          caption="Search: full-text across a11y text, OCR, and watch transcripts, with filters and scores."
         />
       </Section>
 
@@ -112,8 +112,8 @@ export default function HeimdallPage() {
           ]}
         />
         <Figure
-          src="/images/projects/heimdall-5.png"
-          alt="Heimdall settings surface: server URL, OCR engine, exclusions, window rules"
+          src="/images/projects/heimdall-settings.png"
+          alt="Heimdall settings surface: server URL, OCR engine toggle, exclusions, window rules"
           caption="Settings as spine: engine, exclusions, rules, and pipes — live, no restart."
         />
       </Section>

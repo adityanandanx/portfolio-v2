@@ -16,6 +16,20 @@ export default function NirbhayPage() {
         ]}
       />
 
+      <div className="mt-8 mb-2">
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border">
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://embed.figma.com/slides/OQExg7NDuFGN1PTDLglY4k/Nirbhay?node-id=2097-41&embed-host=share"
+            allowFullScreen
+            title="Nirbhay pitch deck"
+          />
+        </div>
+        <p className="text-sm opacity-60 mt-2 text-center">
+          The pitch deck: the problem, the system, and the mission.
+        </p>
+      </div>
+
       <Stats
         items={[
           { value: "0-touch", label: "alert triggering" },
