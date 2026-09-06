@@ -17,16 +17,18 @@ export default function NirbhayPage() {
       />
 
       <div className="mt-8 mb-2">
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border">
-          <iframe
-            className="absolute inset-0 w-full h-full"
-            src="https://embed.figma.com/slides/OQExg7NDuFGN1PTDLglY4k/Nirbhay?node-id=2097-41&embed-host=share"
-            allowFullScreen
-            title="Nirbhay pitch deck"
-          />
-        </div>
+        <video
+          className="w-full aspect-video rounded-xl border border-border bg-black"
+          controls
+          preload="none"
+          poster="/images/projects/nirbhay-demo-poster.png"
+        >
+          <source src="/videos/nirbhay-demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <p className="text-sm opacity-60 mt-2 text-center">
-          The pitch deck: the problem, the system, and the mission.
+          Hardware demo: the ESP32 wearable pairing with the Flutter app over
+          BLE (71s).
         </p>
       </div>
 
