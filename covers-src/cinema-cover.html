@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1156px; height: 650px;
+    background: #0a0f1e;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 56px 64px;
+    background-image: radial-gradient(ellipse 60% 50% at 20% 20%, rgba(56,189,248,0.12), transparent),
+                      radial-gradient(ellipse 60% 50% at 85% 80%, rgba(168,85,247,0.12), transparent);
+  }
+  .kicker {
+    font-size: 22px; letter-spacing: 6px; text-transform: uppercase;
+    color: #38bdf8; margin-bottom: 18px; font-weight: 600;
+  }
+  h1 { font-size: 52px; font-weight: 800; text-align: center; line-height: 1.15; margin-bottom: 14px; }
+  h1 .accent { color: #38bdf8; }
+  .sub { font-size: 24px; color: #94a3b8; margin-bottom: 40px; text-align: center; }
+  .pipe { display: flex; align-items: stretch; gap: 0; width: 100%; }
+  .node {
+    flex: 1; background: #131c33; border: 2px solid #274067; border-radius: 14px;
+    padding: 16px 10px; text-align: center;
+  }
+  .node b { display: block; font-size: 23px; margin-bottom: 6px; }
+  .node span { font-size: 18px; color: #93c5fd; }
+  .node.store { border-color: #38bdf8; background: #0e2540; }
+  .node.agent { border-color: #a855f7; background: #221239; }
+  .arrow {
+    align-self: center; color: #38bdf8; font-size: 34px; font-weight: bold;
+    padding: 0 8px;
+  }
+  .stats { display: flex; gap: 36px; margin-top: 36px; }
+  .stat { text-align: center; }
+  .stat b { display: block; font-size: 34px; color: #f1f5f9; }
+  .stat span { font-size: 19px; color: #64748b; }
+</style>
+</head>
+<body>
+  <div class="kicker">Hybrid RAG</div>
+  <h1>Conversational <span class="accent">Movie</span> Agent</h1>
+  <div class="sub">Ask anything across 2,200 screenplays in plain English</div>
+  <div class="pipe">
+    <div class="node"><b>Query</b><span>Gradio / CLI / API</span></div>
+    <div class="arrow">&#8594;</div>
+    <div class="node"><b>Dense + Sparse</b><span>bge-small &#183; BM25</span></div>
+    <div class="arrow">&#8594;</div>
+    <div class="node"><b>Fusion</b><span>RRF re-rank</span></div>
+    <div class="arrow">&#8594;</div>
+    <div class="node store"><b>Qdrant</b><span>289K chunks</span></div>
+    <div class="arrow">&#8594;</div>
+    <div class="node agent"><b>Llama 4 17B</b><span>via Groq</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2,200</b><span>screenplays</span></div>
+    <div class="stat"><b>289,124</b><span>chunks</span></div>
+    <div class="stat"><b>RRF</b><span>hybrid fusion</span></div>
+  </div>
+</body>
+</html>

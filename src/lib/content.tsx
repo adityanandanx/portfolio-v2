@@ -55,6 +55,7 @@ export const projects: Project[] = [
   },
   {
     title: "Hybrid RAG Pipeline: Conversational Movie Agent",
+    coverImg: "/images/projects/cinema-cover.png",
     githubLink: "https://github.com/adityanandanx/cinema-rag",
     desc: "Multi-agent hybrid retrieval-augmented generation pipeline answering natural-language queries across 2,200 movie screenplays chunked into 289,124 documents. Combines dense retrieval (BAAI/bge-small-en-v1.5) with BM25 sparse retrieval via Reciprocal Rank Fusion, Qdrant as the vector store, and Llama 4 17B via Groq for fast response generation.",
     tags: [
