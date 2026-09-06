@@ -321,3 +321,8 @@
     display: none;
   }
 }
+
+.fk:last-child {
+  top: auto !important;
+  bottom: 2.5%;
+}

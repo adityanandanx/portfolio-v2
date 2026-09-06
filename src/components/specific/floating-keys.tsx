@@ -84,13 +84,15 @@ const FloatingKeys = () => {
 
   useEffect(() => {
     let raf = 0;
+    const MAX_SHIFT = 90;
     const update = () => {
       raf = 0;
       const y = window.scrollY;
       itemRefs.current.forEach((el) => {
         if (!el) return;
         const depth = Number(el.dataset.depth || 0);
-        el.style.setProperty("--par", `${(y * depth).toFixed(1)}px`);
+        const shift = Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, y * depth));
+        el.style.setProperty("--par", `${shift.toFixed(1)}px`);
       });
     };
     const onScroll = () => {
