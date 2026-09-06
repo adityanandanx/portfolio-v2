@@ -28,10 +28,10 @@ const ExpSection = () => {
                 href="https://www.quivr.com/"
                 logo="/images/quivr.jpeg"
                 ariaLabel="Link to Quivr's website"
-                position="Frontend Intern"
+                position="Frontend Intern & Open Source Contributor"
                 company="Quivr (YC W24)"
                 location="Remote"
-                from="Sep 2024"
+                from="May 2023"
                 to="Nov 2024"
               >
                 <ul className="list-outside ml-5 list-disc">
@@ -51,38 +51,16 @@ const ExpSection = () => {
                     output as provisional with explicit accept/decline actions
                   </li>
                   <li>
-                    Resynced a release branch diverged 500+ files from main
-                    and fixed editor/search-bar toggling to unblock the 0.1
-                    release; shipped a Whisper-based STT/TTS chatbot example
-                    with 11-language translations
-                  </li>
-                </ul>
-              </Exp>
-              <Exp
-                href="https://www.quivr.com/"
-                logo="/images/quivr.jpeg"
-                ariaLabel="Link to Quivr's website"
-                position="Open Source Contributor"
-                company="Quivr (YC W24)"
-                location="Remote"
-                from="May 2023"
-                to="Jul 2023"
-              >
-                <ul className="list-outside ml-5 list-disc">
-                  <li>
-                    Restructured the prototype to the Next.js App Router and
+                    Restructured the prototype to the Next.js App Router,
                     built the first reusable primitives (Button, NavBar,
-                    Modal, Toast, Tooltip)
+                    Modal, Toast, Tooltip), and shipped multi-conversation
+                    chat with Supabase-backed history plus a searchable
+                    multi-brain switcher on Radix UI popovers
                   </li>
                   <li>
-                    Built multi-conversation chat with Supabase-backed history
-                    via a React context layer after the initial hook caused
-                    duplicate API calls
-                  </li>
-                  <li>
-                    Designed the multi-brain architecture and shipped a
-                    searchable brain switcher on Radix UI popovers with inline
-                    creation and deletion
+                    Resynced a release branch diverged 500+ files from main
+                    to unblock the 0.1 release; shipped a Whisper-based
+                    STT/TTS chatbot example with 11-language translations
                   </li>
                 </ul>
               </Exp>

@@ -37,8 +37,9 @@ export const stuff: string[] = [
 export const projects: Project[] = [
   {
     title: "Heimdall: Local AI Screen Memory for Hyprland",
+    coverImg: "/images/projects/heimdall-cover.png",
     githubLink: "https://github.com/adityanandanx/heimdall",
-    desc: "Event-driven Python capture daemon on the Hyprland socket: on window changes it captures the active-window region (grim) and its accessibility tree (AT-SPI) into a searchable SQLite/FTS5 store, falling back to RapidOCR on the Intel NPU (OpenVINO) for blind windows. YouTube watch-sessions become searchable via subtitles, scheduled day-recap pipes run on a local Gemma model, and a Tauri 2 desktop client serves timeline, search, and settings. Everything stays on-machine.",
+    desc: "Event-driven Python capture daemon on the Hyprland socket: on window changes it captures the active-window region (grim) and its accessibility tree (AT-SPI) into a searchable SQLite/FTS5 store, falling back to RapidOCR on the Intel NPU (OpenVINO) for blind windows. YouTube watch-sessions (MPRIS + Chromium MV3 extension + yt-dlp/faster-whisper transcripts) become searchable via subtitles served over FastAPI, scheduled day-recap and time-breakdown pipes run through a local Gemma 4 QAT model on the Arc Vulkan backend (llama-server), and a Tauri 2 desktop client serves timeline, search, sessions, and settings. Everything stays on-machine.",
     tags: [
       "Python",
       "Hyprland",
@@ -104,12 +105,12 @@ export const awards: AwardItem[] = [
     ],
   },
   {
-    title: "IndiaSkills National 2024: Web Technologies",
+    title: "IndiaSkills National Qualifier: Web Technologies",
     organization:
       "Ministry of Skill Development & Entrepreneurship, Govt. of India",
     from: "2024",
     details: [
-      "Won IndiaSkills National 2024 in Web Technologies after 2+ months of intensive training and 3 internal test rounds, securing selection to represent India internationally.",
+      "Won IndiaSkills National 2024 in Web Technologies after 2+ months of intensive training and 3 internal test rounds simulating competition constraints, securing selection to represent India internationally.",
     ],
   },
   {
