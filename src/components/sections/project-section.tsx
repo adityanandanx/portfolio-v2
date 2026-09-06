@@ -1,7 +1,7 @@
 import { projects } from "@/lib/content";
 import { type Project } from "@/lib/types";
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { ImageIcon, LinkIcon } from "lucide-react";
+import { BookOpenText, ImageIcon, LinkIcon } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
@@ -41,7 +41,7 @@ const ProjectSection = () => {
 };
 
 const Project = ({
-  project: { coverImg, href, githubLink, title, desc, tags },
+  project: { coverImg, href, githubLink, title, desc, tags, slug },
 }: {
   project: Project;
 }) => {
@@ -64,13 +64,22 @@ const Project = ({
       </div>
       <CardHeader>
         <CardTitle className="text-3xl">
-          <a
-            href={href ? href : githubLink}
-            target="_blank"
-            className="hover:underline underline-offset-2"
-          >
-            {title}
-          </a>
+          {slug ? (
+            <a
+              href={`/projects/${slug}`}
+              className="hover:underline underline-offset-2"
+            >
+              {title}
+            </a>
+          ) : (
+            <a
+              href={href ? href : githubLink}
+              target="_blank"
+              className="hover:underline underline-offset-2"
+            >
+              {title}
+            </a>
+          )}
         </CardTitle>
         <CardDescription>{desc}</CardDescription>
       </CardHeader>
@@ -84,6 +93,13 @@ const Project = ({
         </div>
       </CardContent>
       <CardFooter className="justify-end mt-auto">
+        {slug && (
+          <a href={`/projects/${slug}`}>
+            <Button variant={"link"}>
+              <BookOpenText /> Case study
+            </Button>
+          </a>
+        )}
         <a href={githubLink} target="_blank">
           <Button variant={"link"}>
             <SiGithub /> Github

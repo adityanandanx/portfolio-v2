@@ -28,21 +28,39 @@ const ExpSection = () => {
                 href="https://www.quivr.com/"
                 logo="/images/quivr.jpeg"
                 ariaLabel="Link to Quivr's website"
-                position="Frontend Intern"
+                position="Frontend Intern & Open Source Contributor"
                 company="Quivr (YC W24)"
                 location="Remote"
-                from="Sep 2024"
+                from="May 2023"
                 to="Nov 2024"
               >
                 <ul className="list-outside ml-5 list-disc">
                   <li>
-                    Integrated rich text note-taking feature in React codebase
+                    Built the notetaker feature end-to-end from scratch (8
+                    PRs, 6 merged) with TipTap/ProseMirror, shipping a
+                    formatting toolbar, sticky search bar, and scoped styling
+                    as Notetaker 0.1
                   </li>
-                  <li>Developed using React.js, Next.js, SCSS, TipTap</li>
                   <li>
-                    Enabled creation, management, and querying of notes using
-                    retrieval-augmented generation (RAG) conversational
-                    artificial intelligence
+                    Implemented &quot;@&quot;-mention brain selection, Mod+F
+                    search bar, and a shared ChatBar reused across search and
+                    notetaker with note-scoped conversations
+                  </li>
+                  <li>
+                    Designed a custom TipTap AIHighlight extension marking AI
+                    output as provisional with explicit accept/decline actions
+                  </li>
+                  <li>
+                    Restructured the prototype to the Next.js App Router,
+                    built the first reusable primitives (Button, NavBar,
+                    Modal, Toast, Tooltip), and shipped multi-conversation
+                    chat with Supabase-backed history plus a searchable
+                    multi-brain switcher on Radix UI popovers
+                  </li>
+                  <li>
+                    Resynced a release branch diverged 500+ files from main
+                    to unblock the 0.1 release; shipped a Whisper-based
+                    STT/TTS chatbot example with 11-language translations
                   </li>
                 </ul>
               </Exp>
