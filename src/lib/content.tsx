@@ -36,6 +36,7 @@ export const stuff: string[] = [
 
 export const projects: Project[] = [
   {
+    slug: "heimdall",
     title: "Heimdall: Local AI Screen Memory for Hyprland",
     coverImg: "/images/projects/heimdall-cover.png",
     githubLink: "https://github.com/adityanandanx/heimdall",
@@ -54,6 +55,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "cinema-rag",
     title: "Hybrid RAG Pipeline: Conversational Movie Agent",
     coverImg: "/images/projects/cinema-cover.png",
     githubLink: "https://github.com/adityanandanx/cinema-rag",
@@ -71,6 +73,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "bitflip",
     title: "BitFlip: Story Based 2D Platformer Game",
     coverImg: "/images/projects/bitflip-cover.png",
     githubLink: "https://github.com/Team-Hacksmith/bitflip",
@@ -78,6 +81,7 @@ export const projects: Project[] = [
     tags: ["Godot", "GDScript", "2D Platformer", "Game Jam Winner"],
   },
   {
+    slug: "nirbhay",
     title: "Nirbhay: Automated Emergency Detection App",
     coverImg: "/images/projects/nirbhay-cover.png",
     githubLink: "https://github.com/Team-Hacksmith/nirbhay",

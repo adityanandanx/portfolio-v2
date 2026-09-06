@@ -7,6 +7,7 @@ export type Project = {
   title: string;
   desc: string;
   tags: string[];
+  slug?: string; // links card to /projects/[slug] detail page
 };
 
 export type NavLink = {
