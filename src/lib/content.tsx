@@ -71,6 +71,7 @@ export const projects: Project[] = [
   },
   {
     title: "BitFlip: Story Based 2D Platformer Game",
+    coverImg: "/images/projects/bitflip-cover.png",
     githubLink: "https://github.com/Team-Hacksmith/bitflip",
     desc: "Story-based 2D platformer built in 72 hours, winning 1st place at IIT Ropar's Advitiya Game Jam 2025. Built with Godot and GDScript leading a 3-member team, with coyote time, variable jump height, and jump buffering tuned for smooth performance.",
     tags: ["Godot", "GDScript", "2D Platformer", "Game Jam Winner"],
