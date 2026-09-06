@@ -1,4 +1,4 @@
-import { ArchList, Figure, PageHero, Section, Stats } from "./shared";
+import { ArchList, Figure, PageHero, Section, Stats, statIcons } from "./shared";
 
 export default function CinemaRagPage() {
   return (
@@ -14,10 +14,10 @@ export default function CinemaRagPage() {
 
       <Stats
         items={[
-          { value: "2,200", label: "screenplays" },
-          { value: "289,124", label: "chunks indexed" },
-          { value: "k = 10", label: "retrieval depth" },
-          { value: "17B", label: "Llama 4 via Groq" },
+          { value: "2,200", label: "screenplays", icon: statIcons.film },
+          { value: "289,124", label: "chunks indexed", icon: statIcons.database },
+          { value: "k = 10", label: "retrieval depth", icon: statIcons.target },
+          { value: "17B", label: "Llama 4 via Groq", icon: statIcons.brain },
         ]}
       />
 

@@ -1,4 +1,4 @@
-import { ArchList, Figure, PageHero, Section, Stats } from "./shared";
+import { ArchList, Figure, PageHero, Section, Stats, statIcons } from "./shared";
 
 const GH = "https://github.com/adityanandanx/heimdall";
 
@@ -17,10 +17,10 @@ export default function HeimdallPage() {
 
       <Stats
         items={[
-          { value: "84", label: "tracked issues" },
-          { value: "~50ms", label: "a11y read vs 3.8s OCR" },
-          { value: "18.1 tok/s", label: "Gemma 4 on Arc Vulkan" },
-          { value: "0", label: "bytes leave the machine" },
+          { value: "84", label: "tracked issues", icon: statIcons.issues },
+          { value: "~50ms", label: "a11y read vs 3.8s OCR", icon: statIcons.speed },
+          { value: "18.1 tok/s", label: "Gemma 4 on Arc Vulkan", icon: statIcons.chip },
+          { value: "0", label: "bytes leave the machine", icon: statIcons.lock },
         ]}
       />
 

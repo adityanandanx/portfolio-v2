@@ -1,4 +1,4 @@
-import { ArchList, Figure, PageHero, Section, Stats } from "./shared";
+import { ArchList, Figure, PageHero, Section, Stats, statIcons } from "./shared";
 
 export default function BitFlipPage() {
   return (
@@ -15,10 +15,10 @@ export default function BitFlipPage() {
 
       <Stats
         items={[
-          { value: "72 hrs", label: "build time" },
-          { value: "1st", label: "Advitiya Game Jam 2025, IIT Ropar" },
-          { value: "3", label: "team members" },
-          { value: "v3.5", label: "Godot Engine" },
+          { value: "72 hrs", label: "build time", icon: statIcons.timer },
+          { value: "1st", label: "Advitiya Game Jam 2025, IIT Ropar", icon: statIcons.trophy },
+          { value: "3", label: "team members", icon: statIcons.users },
+          { value: "v3.5", label: "Godot Engine", icon: statIcons.gamepad },
         ]}
       />
 

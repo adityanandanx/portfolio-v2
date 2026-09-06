@@ -1,7 +1,7 @@
 import { projects } from "@/lib/content";
 import { type Project } from "@/lib/types";
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { ImageIcon, LinkIcon } from "lucide-react";
+import { BookOpenText, ImageIcon, LinkIcon } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
@@ -95,7 +95,9 @@ const Project = ({
       <CardFooter className="justify-end mt-auto">
         {slug && (
           <a href={`/projects/${slug}`}>
-            <Button variant={"link"}>Case study</Button>
+            <Button variant={"link"}>
+              <BookOpenText /> Case study
+            </Button>
           </a>
         )}
         <a href={githubLink} target="_blank">

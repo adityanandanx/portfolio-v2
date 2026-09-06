@@ -1,4 +1,4 @@
-import { ArchList, Figure, PageHero, Section, Stats } from "./shared";
+import { ArchList, Figure, PageHero, Section, Stats, statIcons } from "./shared";
 
 export default function NirbhayPage() {
   return (
@@ -32,10 +32,10 @@ export default function NirbhayPage() {
 
       <Stats
         items={[
-          { value: "0-touch", label: "alert triggering" },
-          { value: "ESP32", label: "wearable hardware" },
-          { value: "YAMNet", label: "audio distress detection" },
-          { value: "Flutter", label: "mobile app" },
+          { value: "0-touch", label: "alert triggering", icon: statIcons.speed },
+          { value: "ESP32", label: "wearable hardware", icon: statIcons.chip },
+          { value: "YAMNet", label: "audio distress detection", icon: statIcons.audio },
+          { value: "Flutter", label: "mobile app", icon: statIcons.phone },
         ]}
       />
 
